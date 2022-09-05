@@ -31,7 +31,7 @@ Interactive course selector for the CSESoc Discord. Based on the graphic in the 
 - [x] Responsive design
 - [x] Copy course command to clipboard on click
 - [x] Add credits
-- [ ] Popup alert with link to channel when course is selected
+- [x] Popup alert with link to channel when course is selected
 - [ ] Display course name when hovering over a course
 - [ ] Instructions and images on how to add and remove courses in the discord channel
 

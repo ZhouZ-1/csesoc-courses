@@ -33,7 +33,13 @@ Interactive course selector for the CSESoc Discord. Based on the graphic in the 
 - [x] Add credits
 - [x] Popup alert with link to channel when course is selected
 - [ ] Display course name when hovering over a course
+- [ ] Search bar to filter courses by keyword. Courses are greyed out on larger screens and removed on smaller screens.
+- [ ] Filter courses by term. Courses are greyed out on larger screens and removed on smaller screens.
 - [ ] Instructions and images on how to add and remove courses in the discord channel
+
+## Known issues
+
+- On mobile, the slash commands do not work when the channel has been opened recently. A potential fix would be for the CSESoc Discord Bot team to implement adding roles by monitoring the chat for a regex pattern that triggers the role add process, like how it was with the previous bot.
 
 ## Contributing
 

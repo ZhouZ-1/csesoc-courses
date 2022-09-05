@@ -43,7 +43,9 @@ const Home: NextPage = () => {
             width={160}
             className="mx-auto pt-4"
           />
-          <h1 className="text-5xl font-bold text-center mt-1">COURSE LIST</h1>
+          <h1 className="text-5xl font-bold text-center mt-1 select-none">
+            COURSE LIST
+          </h1>
         </header>
 
         <main className="container mx-auto lg:flex lg:flex-row lg:justify-between p-4 text-white 2xl:mt-6">

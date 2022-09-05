@@ -33,6 +33,7 @@ Interactive course selector for the CSESoc Discord. Based on the graphic in the 
 - [x] Add credits
 - [x] Popup alert with link to channel when course is selected
 - [ ] Display course name when hovering over a course
+- [ ] Toggle join or leave command to be copied
 - [ ] Search bar to filter courses by keyword. Courses are greyed out on larger screens and removed on smaller screens.
 - [ ] Filter courses by term. Courses are greyed out on larger screens and removed on smaller screens.
 - [ ] Instructions and images on how to add and remove courses in the discord channel

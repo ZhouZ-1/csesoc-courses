@@ -33,7 +33,7 @@ const CourseElement = ({ course }: Props) => {
       >
         <button className="absolute bottom-10 left-0 right-0 z-10">
           <a
-            className="bg-[#36393f] rounded-md p-4 mx-auto text-center text-lg w-fit select-none cursor-pointer font-discord"
+            className="bg-[#36393f] rounded-md p-4 mx-auto text-center text-xs lg:text-lg w-fit select-none cursor-pointer font-discord"
             href="https://discord.com/channels/693779865916276746/860388285511630868"
             target="_blank"
             rel="noreferrer"

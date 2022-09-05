@@ -13,7 +13,7 @@ const CourseElement = ({ course }: Props) => {
       <button
         className="text-xl basis-1/3 sm:basis-1/4 mt-1 text-center font-mono cursor-pointer 2xl:text-2xl select-none"
         onClick={async () => {
-          await navigator.clipboard.writeText(`/role give role:@${course}`);
+          await navigator.clipboard?.writeText(`/role give role:@${course}`);
           setIsShowing(true);
           setTimeout(() => {
             setIsShowing(false);
@@ -31,7 +31,7 @@ const CourseElement = ({ course }: Props) => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <button className="absolute bottom-10 left-0 right-0 z-10">
+        <button className="fixed bottom-10 left-0 right-0 z-10">
           <a
             className="bg-[#36393f] rounded-md p-4 mx-auto text-center text-xs lg:text-lg w-fit select-none cursor-pointer font-discord"
             href="https://discord.com/channels/693779865916276746/860388285511630868"

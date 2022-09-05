@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import type { NextPage } from "next";
 import Head from "next/head";
 import LargeCourseSection from "../components/LargeCourseSection";
@@ -30,7 +32,7 @@ const Home: NextPage = () => {
         <title>CSESoc Discord Courses</title>
         <meta
           name="description"
-          content="CSESoc Discord Courses. Credits to Waleed for the design."
+          content="pls make new graphic uwu - shrey 2022"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -58,6 +60,20 @@ const Home: NextPage = () => {
             <SmallCourseSection courses={desnCourses} prefix="DESN" />
           </div>
         </main>
+        <footer className="text-[#5da0d1] text-4xl select-none lg:absolute p-4 lg:bottom-0 lg:right-0 text-right">
+          <span className="italic">DESIGN BY WALEED</span> |{" "}
+          <a
+            href="https://github.com/ZhouZ-1/csesoc-courses"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="iconmonstr-github-1.svg"
+              className="inline-block fill-[#5da0d1] h-10"
+              alt="GitHub Logo"
+            />
+          </a>
+        </footer>
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import CourseElement from "../components/CourseElement";
 import LargeCourseSection from "../components/LargeCourseSection";
 import SmallCourseSection from "../components/SmallCourseSection";
 import courses from "../courses.json";
@@ -36,7 +35,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <body className="bg-gradient-to-b from-[#175bc0] to-[#268ecc] min-h-screen text-[#e3e3e3]">
+      <div className="bg-gradient-to-b from-[#175bc0] to-[#268ecc] min-h-screen text-[#e3e3e3]">
         <header>
           <img
             src="/csesocwhiteblue.9bc2ecf4.png"
@@ -57,7 +56,7 @@ const Home: NextPage = () => {
             <SmallCourseSection courses={desnCourses} prefix="DESN" />
           </div>
         </main>
-      </body>
+      </div>
     </>
   );
 };

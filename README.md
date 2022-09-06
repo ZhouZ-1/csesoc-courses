@@ -32,10 +32,12 @@ Interactive course selector for the CSESoc Discord. Based on the graphic in the 
 - [x] Copy course command to clipboard on click
 - [x] Add credits
 - [x] Popup alert with link to channel when course is selected
+- [ ] Convince CSESoc Discord Bot team to add support for the onMessageCreate event that starts with `\role give`
 - [ ] Display course name when hovering over a course
-- [ ] Toggle join or leave command to be copied
+- [ ] Toggle join and leave command to be copied
 - [ ] Search bar to filter courses by keyword. Courses are greyed out on larger screens and removed on smaller screens.
-- [ ] Filter courses by term. Courses are greyed out on larger screens and removed on smaller screens.
+- [ ] Filter courses by term. Courses are greyed out on larger screens and removed on smaller screens. Defaults to the current term as the initial state.
+- [ ] Settings modal: toggle between remove and grey out, toggle between default join and leave command, toggle between current term and all terms. toggle theme.
 - [ ] Instructions and images on how to add and remove courses in the discord channel
 
 ## Known issues

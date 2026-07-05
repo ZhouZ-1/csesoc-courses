@@ -1,0 +1,147 @@
+---
+import "../styles/global.css";
+import courses from "../courses.json";
+
+const parseCourses = (prefix: string, codes: number[]) =>
+  [...new Set(codes)].sort().map((code) => `${prefix}${code}`);
+
+const compCourses = parseCourses("COMP", courses.COMP);
+const smallSections = [
+  { prefix: "MATH", courses: parseCourses("MATH", courses.MATH) },
+  { prefix: "SENG", courses: parseCourses("SENG", courses.SENG) },
+  { prefix: "ENGG", courses: parseCourses("ENGG", courses.ENGG) },
+  { prefix: "BINF", courses: parseCourses("BINF", courses.BINF) },
+  { prefix: "DESN", courses: parseCourses("DESN", courses.DESN) },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSESoc Discord Courses</title>
+    <meta name="description" content="pls make new graphic uwu - shrey 2022" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div
+      class="bg-gradient-to-b from-[#175bc0] to-[#268ecc] min-h-screen text-[#e3e3e3]"
+    >
+      <header>
+        <img
+          src="/csesocwhiteblue.9bc2ecf4.png"
+          alt="CSESoc Logo"
+          width="160"
+          class="mx-auto pt-4"
+        />
+        <h1 class="text-5xl font-bold text-center mt-1 select-none">
+          COURSE LIST
+        </h1>
+      </header>
+
+      <main
+        class="container mx-auto lg:flex lg:flex-row lg:justify-between p-4 text-white 2xl:mt-6"
+      >
+        <section class="flex flex-col basis-1/2 xl:basis-2/5">
+          <h2
+            class="text-4xl border-b-2 border-[#e3e3e3] w-min self-center mb-2 2xl:text-5xl select-none"
+          >
+            COMP
+          </h2>
+          <div class="flex flex-wrap">
+            {
+              compCourses.map((course) => (
+                <button
+                  class="course-btn text-xl basis-1/3 sm:basis-1/4 mt-1 text-center font-mono cursor-pointer 2xl:text-2xl select-none"
+                  data-course={course}
+                >
+                  {course}
+                </button>
+              ))
+            }
+          </div>
+        </section>
+        <div
+          class="basis-[45%] xl:basis-[55%] flex flex-wrap flex-row content-start mt-6 lg:mt-0"
+        >
+          {
+            smallSections.map((section) => (
+              <section class="flex flex-col basis-1/3 mb-6">
+                <h2 class="text-4xl border-b-2 border-[#e3e3e3] w-min self-center mb-2 2xl:text-5xl select-none">
+                  {section.prefix}
+                </h2>
+                <div class="flex flex-col w-min self-center">
+                  {section.courses.map((course) => (
+                    <button
+                      class="course-btn text-xl basis-1/3 sm:basis-1/4 mt-1 text-center font-mono cursor-pointer 2xl:text-2xl select-none"
+                      data-course={course}
+                    >
+                      {course}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ))
+          }
+        </div>
+      </main>
+      <footer
+        class="text-[#5da0d1] text-4xl select-none lg:absolute p-4 lg:bottom-0 lg:right-0 text-right"
+      >
+        <span class="italic">DESIGN BY WALEED</span> |{" "}
+        <a
+          href="https://github.com/ZhouZ-1/csesoc-courses"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="iconmonstr-github-1.svg"
+            class="inline-block fill-[#5da0d1] h-10"
+            alt="GitHub Logo"
+          />
+        </a>
+      </footer>
+
+      <div
+        id="copy-toast"
+        class="fixed bottom-10 left-0 right-0 z-10 text-center transition-opacity duration-500 opacity-0 pointer-events-none"
+      >
+        <a
+          class="bg-[#36393f] rounded-md p-4 mx-auto text-center text-xs lg:text-lg w-fit select-none cursor-pointer font-discord shadow-xl text-white"
+          href="https://discord.com/channels/693779865916276746/860388285511630868"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Copied to Clipboard! Click here to go to{" "}
+          <span class="underline text-[#DEE0FC] bg-[#5865F2]/[0.3]">
+            #course-chats
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const toast = document.getElementById("copy-toast")!;
+      let hideTimer: ReturnType<typeof setTimeout> | undefined;
+
+      document.querySelectorAll<HTMLButtonElement>(".course-btn").forEach(
+        (btn) => {
+          btn.addEventListener("click", async () => {
+            const course = btn.dataset.course;
+            await navigator.clipboard?.writeText(
+              `/course join course:${course}`
+            );
+            toast.classList.remove("opacity-0", "pointer-events-none");
+            toast.classList.add("opacity-100");
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+              toast.classList.remove("opacity-100");
+              toast.classList.add("opacity-0", "pointer-events-none");
+            }, 5000);
+          });
+        }
+      );
+    </script>
+  </body>
+</html>

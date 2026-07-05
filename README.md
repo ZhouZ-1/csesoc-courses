@@ -13,17 +13,20 @@ Interactive course selector for the CSESoc Discord. Based on the graphic in the 
 
 ## Built With
 
-- React
-- Next.js
+- Astro
 - Tailwind CSS
 - TypeScript
+
+Hosted on Cloudflare Workers as static assets (see `wrangler.jsonc`). Deploys
+automatically on push to `main` via Workers Builds; `pnpm run deploy` deploys
+manually.
 
 ## Getting Started
 
 1. `git clone https://github.com/ZhouZ-1/csesoc-courses.git`
 2. `cd csesoc-courses`
-3. `npm install`
-4. `npm run dev`
+3. `pnpm install`
+4. `pnpm dev`
 
 ## Roadmap
 
